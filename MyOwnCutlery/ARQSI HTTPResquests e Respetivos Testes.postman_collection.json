@@ -1,0 +1,695 @@
+{
+	"info": {
+		"_postman_id": "c40cba24-c643-4baa-82dd-2a52187c1881",
+		"name": "ARQSI HTTPResquests e Respetivos Testes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar todos os tipos de maquina",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a18b146f-7592-4718-8eaf-94202088ed37",
+						"exec": [
+							"tests[\"Successful GET request\"] =\r",
+							"responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/machinetype",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machinetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tipo de maquina por ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "01a9d508-d295-4dee-846b-7e35e7ccb45e",
+						"exec": [
+							"tests[\"Successful GET request\"] =\r",
+							"responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/machinetype/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machinetype",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar maquinas de tipo de maquina",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "35b3f630-b038-45c1-9d18-a1bb3214f0ac",
+						"exec": [
+							"var jsonData=JSON.parse(responseBody);\r",
+							"\r",
+							"\r",
+							"pm.test(\"Operation was successfully created\", function () {\r",
+							"    \r",
+							"    \r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/machine/MachineType1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machine",
+						"MachineType1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar todas as maquinas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "28555b2b-35dd-4d46-b664-4b62b683a559",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/machine/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machine",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar maquina por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/machine/1/machinebyid",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machine",
+						"1",
+						"machinebyid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar todas as operacoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "976fa47e-43b3-4476-a687-6689be5c1d2a",
+						"exec": [
+							"tests[\"Status code é 200\"] = responseCode.code ===200;\r",
+							"\r",
+							"tests[\"There is operationsDTOid on body\"] = responseBody.has(\"operationsDTOId\");\r",
+							"\r",
+							"tests[\"There is ToolDesc on body\"] = responseBody.has(\"toolDesc\");\r",
+							"\r",
+							"tests[\"There is Name on body\"] = responseBody.has(\"name\");\r",
+							"\r",
+							"tests[\"There is duration on body\"] = responseBody.has(\"duration\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/operations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"operations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar operacoes por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/operations/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"operations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar todos produtos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d439040-b050-4275-80f7-7e1bf74c8c96",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/product/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar produto por ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4499dd30-2519-4217-995b-e57f13b7d347",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                \"Name\": {\r\n                    \"Name\": \"FacaXPTO\"\r\n                },\r\n                \"ManufacturingPlan\": {\r\n                    \"Date\": \"2019-10-27T00:00:00\",\r\n                    \"Operations\": [{\r\n                    \t \"designation\": {\r\n                    \t\t\"designation\": \"Operations1\"\r\n                \t\t},\r\n                \t\t\"toolDetails\": {\r\n                    \t\t\"det\": \"teste99\"\r\n                \t\t},\r\n                \t\t\"dur\": {\r\n                    \t\t\"dur\": 2355\r\n                \t\t}\t\r\n                \t}]\r\n                \r\n                }\r\n            }"
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/product/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar todas as linha de producao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/productionLine",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"productionLine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar linha de producao por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/productionLine/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"productionLine",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar tipo maquina de uma dada maquina",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "179ed264-bd6e-492f-8f3b-a200220755c6",
+						"exec": [
+							"tests[\"Successful GET request\"] =\r",
+							"responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"designation\": {\n                    \"designation\": \"NOVO0000\"\n                },\n        \"operations\": []\n       \n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/machine/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machine",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar operacoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25248061-9658-4508-8406-35c41e75cbfc",
+						"exec": [
+							"tests[\"Status code é 200\"] = responseCode.code ===200;\r",
+							"\r",
+							"tests[\"There is designation on body\"] = responseBody.has(\"designation\");\r",
+							"\r",
+							"tests[\"There is operations on body\"] = responseBody.has(\"operations\");\r",
+							"\r",
+							"tests[\"There is ToolDetails on body\"] = responseBody.has(\"toolDetails\");\r",
+							"\r",
+							"tests[\"There is Det on body\"] = responseBody.has(\"det\");\r",
+							"\r",
+							"tests[\"There is duration on body\"] = responseBody.has(\"dur\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n                \"designation\": {\r\n                    \"designation\": \"Op10\"\r\n                },\r\n                \"toolDetails\": {\r\n                    \"det\": \"teste10\"\r\n                },\r\n                \"dur\": {\r\n                    \"dur\": 2310\r\n                }\r\n            },\r\n            {\r\n                \"designation\": {\r\n                    \"designation\": \"Op20\"\r\n                },\r\n                \"toolDetails\": {\r\n                    \"det\": \"teste20\"\r\n                },\r\n                \"dur\": {\r\n                    \"dur\": 23220\r\n                }\r\n            }]\r\n      \r\n    "
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/operations/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"operations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar tipo de maquina ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d3a42b5-f001-4fb6-b1ae-25886e90181a",
+						"exec": [
+							"tests[\"Successful GET request\"] =\r",
+							"responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n                    \"designation\": {\n                    \t\t\t\"designation\": \"MachineType10LOLOLOL\"\n                \t\t\t\t\t},\n                \n               \t\t\"operations\": [{\n                    \t \"designation\": {\n                    \t\t\"designation\": \"Operations1\"\n                \t\t},\n                \t\t\"toolDetails\": {\n                    \t\t\"det\": \"teste99\"\n                \t\t},\n                \t\t\"dur\": {\n                    \t\t\"dur\": 2355\n                \t\t}\t\n                \t}]\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/machinetype",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machinetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar linha de producao",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bc7b6319-196b-483e-8a58-84a79f9192f5",
+						"exec": [
+							"tests[\"Successful POST request\"] =\r",
+							"responseCode.code === 201 || responseCode.code === 202;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"machineList\":[{\n        \"designation\": {\n                    \"designation\": \"Machine99999\"\n                },\n        \"machineType\": {\n                    \"designation\": {\n                    \t\t\t\"designation\": \"MachineType10\"\n                \t\t\t\t\t},\n                \n               \t\t\"operations\": [{\n                    \t \"designation\": {\n                    \t\t\"designation\": \"Operations1\"\n                \t\t},\n                \t\t\"toolDetails\": {\n                    \t\t\"det\": \"teste99\"\n                \t\t},\n                \t\t\"dur\": {\n                    \t\t\"dur\": 2355\n                \t\t}\t\n                \t}]\n        },\n        \"model\": {\n                    \"model\": \"model10\"\n                },\n        \"location\": {\n                    \"factory\": \"factory10\",\n                    \"floor\": \"floor10\",\n                    \"section\": \"section10\"\n                    \n                },\n        \"position\": {\n                    \"position\": 200\n                },\n        \"capacity\": {\n                    \"capacity\": 100\n                }\n\t\n},{\n        \"designation\": {\n                    \"designation\": \"NOVA\"\n                },\n        \"machineType\": {\n                    \"designation\": {\n                    \t\t\t\"designation\": \"MachineType10\"\n                \t\t\t\t\t}\n                \t},\n        \"model\": {\n                    \"model\": \"model10\"\n                },\n        \"location\": {\n                    \"factory\": \"factory10\",\n                    \"floor\": \"floor10\",\n                    \"section\": \"section10\"\n                    \n                },\n        \"position\": {\n                    \"position\": 200\n                },\n        \"capacity\": {\n                    \"capacity\": 100\n                }\n\t\n}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/productionLine",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"productionLine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar maquina",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "126be885-e397-4e51-a5c4-d75e3731f477",
+						"exec": [
+							"tests[\"Successful POST request\"] =\r",
+							"responseCode.code === 201 || responseCode.code === 202;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"designation\": {\r\n                    \"designation\": \"NOkkkkkkkkkkkkkkkkkkkkkkkkkkkkVA\"\r\n                },\r\n        \"machineType\": {\r\n                    \"designation\": {\r\n                    \t\t\t\"designation\": \"MachineType10\"\r\n                \t\t\t\t\t}\r\n                \t},\r\n        \"model\": {\r\n                    \"model\": \"model10\"\r\n                },\r\n        \"location\": {\r\n                    \"factory\": \"factory10\",\r\n                    \"floor\": \"floor10\",\r\n                    \"section\": \"section10\"\r\n                    \r\n                },\r\n        \"position\": {\r\n                    \"position\": 200\r\n                },\r\n        \"capacity\": {\r\n                    \"capacity\": 100\r\n                }\r\n\t\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/machine",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar operacoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a11e5252-956f-40db-b37c-8d59a0f82be4",
+						"exec": [
+							"tests[\"Status code é 200\"] = responseCode.code ===200;\r",
+							"\r",
+							"tests[\"There is operationsDTOid on body\"] = responseBody.has(\"operationsDTOId\");\r",
+							"\r",
+							"tests[\"There is ToolDesc on body\"] = responseBody.has(\"toolDesc\");\r",
+							"\r",
+							"tests[\"There is Name on body\"] = responseBody.has(\"name\");\r",
+							"\r",
+							"tests[\"There is duration on body\"] = responseBody.has(\"duration\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "            {\r\n                \"designation\": {\r\n                    \"designation\": \"Op1999\"\r\n                },\r\n                \"toolDetails\": {\r\n                    \"det\": \"teste99\"\r\n                },\r\n                \"dur\": {\r\n                    \"dur\": 2355\r\n                }\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/operations",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"operations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um produto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                \"Name\": {\r\n                    \"Name\": \"FacaXPTO\"\r\n                },\r\n                \"ManufacturingPlan\": {\r\n                    \"Date\": \"2019-10-27T00:00:00\",\r\n                    \"Operations\": [{\r\n                    \t \"designation\": {\r\n                    \t\t\"designation\": \"Operations1\"\r\n                \t\t},\r\n                \t\t\"toolDetails\": {\r\n                    \t\t\"det\": \"teste99\"\r\n                \t\t},\r\n                \t\t\"dur\": {\r\n                    \t\t\"dur\": 2355\r\n                \t\t}\t\r\n                \t}]\r\n                \r\n                }\r\n            }"
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/product/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

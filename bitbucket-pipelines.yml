@@ -1,0 +1,44 @@
+# This is a sample build configuration for .NET Core.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: microsoft/dotnet:sdk
+
+pipelines:
+  default:
+    - step:
+       caches:
+        - dotnetcore
+       script:
+            - export PROJECT_NAME_MDF=MyOwnCutlery/MDF/MasterDataFabrica/MasterDataFabrica.csproj
+            - dotnet restore MyOwnCutlery/MDF/MasterDataFabrica
+            - dotnet build $PROJECT_NAME_MDF
+
+            - export PROJECT_NAME_MDP=MyOwnCutlery/MDP/MasterDataProducao/MasterDataProducao.csproj
+            - dotnet restore MyOwnCutlery/MDP/MasterDataProducao
+            - dotnet build $PROJECT_NAME_MDP
+
+            - export TEST_NAME=MyOwnCutlery/UnitTest
+            - dotnet test $TEST_NAME
+          
+    - step:
+       image: node:12.13.0
+       caches:
+          - node
+       script:
+          #- export PP=MyOwnCutlery/GE/backend-intro
+          #- cd PP
+          - cd MyOwnCutlery/GE/backend-intro/src
+          - npm install
+          - npm test
+    - step:
+       image: node:12.14.0
+       caches:
+          - node
+       script:
+          - git subtree split --prefix MyOwnCutlery/GE/backend-intro --branch node
+          - cd MyOwnCutlery/GE/backend-intro
+          - npm install
+          - npm build
+          - git push -f https://heroku:ccc28ad4-d613-4cde-b9c0-d6b339bf3e26@git.heroku.com/gestorencomendas.git node:master

@@ -1,0 +1,156 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/MDP/MasterDataProducao/MasterDataProducao.csproj": {}
+  },
+  "projects": {
+    "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/GenericSharedApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/GenericSharedApi.csproj",
+        "projectName": "GenericSharedApi",
+        "projectPath": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/GenericSharedApi.csproj",
+        "packagesPath": "/Users/joaoflores/.nuget/packages/",
+        "outputPath": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/joaoflores/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/MDP/MasterDataProducao/MasterDataProducao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/MDP/MasterDataProducao/MasterDataProducao.csproj",
+        "projectName": "MasterDataProducao",
+        "projectPath": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/MDP/MasterDataProducao/MasterDataProducao.csproj",
+        "packagesPath": "/Users/joaoflores/.nuget/packages/",
+        "outputPath": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/MDP/MasterDataProducao/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/joaoflores/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/GenericSharedApi.csproj": {
+                "projectPath": "/Users/joaoflores/Desktop/Joao/ISEP_3ANO/PROJETO_GERAL/MyOwnCutlery/GSA/GenericSharedApi/GenericSharedApi.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

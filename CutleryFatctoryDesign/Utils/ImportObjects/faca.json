@@ -1,0 +1,91 @@
+{
+	"metadata": {
+		"version": 4.5,
+		"type": "Object",
+		"generator": "Object3D.toJSON"
+	},
+	"geometries": [
+		{
+			"uuid": "4C70ECCB-F5E6-4D57-A506-3EEFB48BBC62",
+			"type": "BoxBufferGeometry",
+			"width": 1,
+			"height": 1,
+			"depth": 1,
+			"widthSegments": 1,
+			"heightSegments": 1,
+			"depthSegments": 1
+		},
+		{
+			"uuid": "33D86D8E-29BD-4BDF-841C-E4332CA3A47A",
+			"type": "CircleBufferGeometry",
+			"radius": 1,
+			"segments": 8,
+			"thetaStart": 0,
+			"thetaLength": 6.283185
+		}],
+	"materials": [
+		{
+			"uuid": "97519F41-20E7-4AB3-B80E-F4EE62C0796C",
+			"type": "MeshStandardMaterial",
+			"color": 16777215,
+			"roughness": 0.5,
+			"metalness": 0.5,
+			"emissive": 16777215,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680
+		},
+		{
+			"uuid": "8BC81FE1-B720-414B-B4C2-EAB058171F57",
+			"type": "MeshStandardMaterial",
+			"color": 16777215,
+			"roughness": 0.5,
+			"metalness": 0.5,
+			"emissive": 16777215,
+			"depthFunc": 3,
+			"depthTest": true,
+			"depthWrite": true,
+			"stencilWrite": false,
+			"stencilWriteMask": 255,
+			"stencilFunc": 519,
+			"stencilRef": 0,
+			"stencilFuncMask": 255,
+			"stencilFail": 7680,
+			"stencilZFail": 7680,
+			"stencilZPass": 7680
+		}],
+	"object": {
+		"uuid": "23766BF3-B5BE-4D6F-AE8D-700B04BBE3E6",
+		"type": "Group",
+		"name": "Faca",
+		"layers": 1,
+		"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,3,0.91,0,1],
+		"children": [
+			{
+				"uuid": "D6F03FE9-1EBF-450A-8B6A-FC866121163C",
+				"type": "Mesh",
+				"name": "Box",
+				"layers": 1,
+				"matrix": [0.1,0,0,0,0,0.01,0,0,0,0,0.4,0,0,0,0.122097,1],
+				"geometry": "4C70ECCB-F5E6-4D57-A506-3EEFB48BBC62",
+				"material": "97519F41-20E7-4AB3-B80E-F4EE62C0796C"
+			},
+			{
+				"uuid": "BC93D639-05FF-46EC-8A3C-9D90A993F9A9",
+				"type": "Mesh",
+				"name": "Circle",
+				"layers": 1,
+				"matrix": [0.15,0,0,0,0,0,-0.1,0,0,0.15,0,0,0,0.02,-0.132704,1],
+				"geometry": "33D86D8E-29BD-4BDF-841C-E4332CA3A47A",
+				"material": "8BC81FE1-B720-414B-B4C2-EAB058171F57"
+			}]
+	}
+}
